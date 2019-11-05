@@ -1,0 +1,10 @@
+$D+ // Turn diagnostic mode on for testing the compiler - t13.pav
+
+void main () { // Relational operations - illegal
+  enum MyType { a, b, c };
+  MyType x, y;
+  if (a < 4) write("a < 4\n");
+  bool okay = a == (char) a;
+  okay = x < 4;
+}
+

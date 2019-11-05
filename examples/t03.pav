@@ -1,0 +1,12 @@
+$D+ // Turn diagnostic mode on for testing the compiler - t03.pav
+
+void main () { // Some bad enumeration declarations
+  enum MyType { a, b, c };
+  enum YourType { a, p, q, r };
+  enum HisType { e1, e2, e3 };
+  enum MyType { my1, my2 };
+  enum YourType { d1, , };
+  enum HerType { f1 f2 };
+  enum ItsType { } it;
+}
+

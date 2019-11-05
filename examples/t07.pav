@@ -1,0 +1,13 @@
+$D+ // Turn diagnostic mode on for testing the compiler - t07.pav
+
+void main () { // For loop going backwards
+  enum MyType { a, b, c };
+  MyType x, y;
+  MyType[] list = new MyType[3];
+  int i = 0;
+  for x = c downto a {
+    list[i] = x;
+    write(i, x, list[i]); i++;
+  }
+}
+

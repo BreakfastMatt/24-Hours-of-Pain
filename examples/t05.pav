@@ -1,0 +1,11 @@
+$D+ // Turn diagnostic mode on for testing the compiler - t05.pav
+
+void main () { // Declarations and invalid input/output
+  enum MyType { a, b, c };
+  MyType  x, y;
+  read(MyType);   // invalid
+  read(x);        // invalid
+  write(x);       // valid syntax; but not meaningful as no value assigned 
+  write(MyType);   // invalid
+}
+

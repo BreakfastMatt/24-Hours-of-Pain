@@ -1,0 +1,9 @@
+$D+ // Turn diagnostic mode on for testing the compiler - t09.pav
+
+void main () { // Simple casting
+  enum MyType { a, b, c };
+  MyType x, y;
+  int i = 100;
+  for x = a to c { write(i, (int) x); i++; }
+}
+

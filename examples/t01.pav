@@ -1,0 +1,8 @@
+$D+ // Turn diagnostic mode on for testing the compiler - t01.pav
+
+void main () { // Declarations and initialisation
+  enum MyType { a, b, c };
+  MyType x = a, y = b;
+  MyType[] list = new MyType[10];
+}
+

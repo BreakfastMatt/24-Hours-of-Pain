@@ -1,0 +1,13 @@
+$D+ // Turn diagnostic mode on for testing the compiler - t06.pav
+
+void main () { // Simple for loops
+  enum MyType { a, b, c };
+  MyType x, y;
+  MyType[] list = new MyType[3];
+  int i = 0;
+  for x = a to c {
+    list[i] = x;
+    write(i, x, list[i]); i++;
+  }
+}
+

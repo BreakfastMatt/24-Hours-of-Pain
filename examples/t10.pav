@@ -1,0 +1,17 @@
+$D+ // Turn diagnostic mode on for testing the compiler - t10.pav
+
+void main () { // Casting between types
+  enum MyType { a, b, c };
+  enum YourType { his, hers };
+  YourType duties = his;
+  MyType x, y;
+  int i = (int) a;
+  x = cast(MyType, 2);
+  x = cast(MyType, his);
+  duties = cast(YourType, his);
+  int i = (int) MyType;                      // illegal 
+  his = cast(YourType, his);                 // illegal 
+  x = cast(YourType, cast(MyType, duties));  // illegal 
+  x = cast(a, 2);                            // illegal 
+}
+

@@ -1,0 +1,6 @@
+$D+ // Turn diagnostic mode on for testing the compiler - t00.pav
+
+void main () { // Declarations only
+  enum MyType { a, b, c };
+}
+

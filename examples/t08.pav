@@ -1,0 +1,12 @@
+$D+ // Turn diagnostic mode on for testing the compiler - t08.pav
+
+void main () { // Simple while loop
+  enum MyType { a, b, c };
+  MyType x, y;
+  int i = 0;
+  x = a; 
+  while (x <= c) 
+  { write(i, x); 
+    i++; x++; }
+}
+

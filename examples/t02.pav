@@ -1,0 +1,8 @@
+$D+ // Turn diagnostic mode on for testing the compiler - t02.pav
+
+void main () { // Several enumerations
+  enum MyType { a, b };
+  enum YourType { p, q };
+  enum SillyType { LonelyValue };
+}
+

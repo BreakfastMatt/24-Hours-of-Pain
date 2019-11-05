@@ -1,0 +1,13 @@
+$D+ // Turn diagnostic mode on for testing the compiler - t12.pav
+
+void main () { // Relational operations - all legal
+  enum MyType { a, b, c };
+  MyType x, y;
+  if (a < c) write("a < c\n");
+  if (c < a) write("compiler error");
+  bool okay = a == a;
+  okay = a > c;
+  okay = (int) c >= 2;
+  write(okay);
+}
+

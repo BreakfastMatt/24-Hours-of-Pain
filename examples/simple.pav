@@ -1,0 +1,21 @@
+$D+ // Turn diagnostic mode on for testing the compiler - simple.pav
+
+void main() { // Simple one to assure you it works!  Look at simple.cod too
+
+  int i = 0, j = 12;
+  while (i < 10) {
+    write(i); i++;
+  }
+  write("\n");
+
+  for j = 100 downto 90 write(j);
+  write("\n");
+
+  char ch = (char) 97;
+
+  for i = 65 to 90 
+   { write(i, (char) i, (int) ch, ch);
+    ch++;  }
+  write("\n");
+
+}

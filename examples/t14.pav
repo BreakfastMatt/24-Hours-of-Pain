@@ -1,0 +1,12 @@
+$D+ // Turn diagnostic mode on for testing the compiler - t14.pav
+
+void main () { // Several enumerations and scopes
+  enum MyType { a, b };
+  enum YourType { p, q };
+  // now start another block and scope
+  { enum MyType { a, b };
+    enum HisType { x, y };
+  } // close inner block
+  enum HisType { h1, h2 };
+}
+

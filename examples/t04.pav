@@ -1,0 +1,10 @@
+$D+ // Turn diagnostic mode on for testing the compiler - t04.pav
+
+void main () { // Declarations and invalid assignments
+  enum MyType { a, b, c };
+  MyType x, y;
+  int i;
+  i = MyType;  // invalid
+  i = x;       // invalid
+  x = i;       // invalid
+}
