@@ -19,6 +19,7 @@ namespace Parva {
       boolType  =  6,
       charType  =  8,
       voidType  = 10;
+      enumType  = 12;           //Liam is happy now. >:D
 
     static List<string> typeNames = new List<string>();
 

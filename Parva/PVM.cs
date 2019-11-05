@@ -787,7 +787,7 @@ namespace Parva {
             break;
 
           case PVM.sfu:           // start for loop "to"
-            if (mem[cpu.sp + 1] > mem[cpu.sp]) cpu.pc = mem[cpu.pc];  // goto exit
+            if (mem[cpu.sp + 1] > mem[cpu.sp]) cpu.pc = mem[cpu.pc];  // goto exit (sos > tos)
             else {
               mem[mem[cpu.sp + 2]] = mem[cpu.sp + 1]; cpu.pc++;       // assign to control
             }
