@@ -227,6 +227,38 @@ PRODUCTIONS
      WEAK ";"
   .
 
+/*
+    public string  name        = "";
+    public int     kind        = Kinds.Con;
+    public int     type        = Types.enumType
+    public int     value       = 0;       // constants
+	public bool    canChange;             // true except for constants
+ */
+  EnumDeclaration<StackFrame frame>         (. Entry var = new Entry(); 
+											   int enumOffset = 0;
+                                            .)
+  =  "enum"
+      EnumIdent<out var.name>  
+	  "{"									(. Entry var = new Entry();
+											   var.kind = Kinds.Con;
+											   var.type = Types.intType;
+											   var.value = enumOffset;
+											   var.canChange 
+											   enumOffset++;  .)
+	  	Ident<out var.name> 				
+		  {									(. Entry var = new Entry();
+											   var.kind = Kinds.Con;
+											   var.type = Types.intType;
+											   var.value = enumOffset;
+											   var.canChange 
+											   enumOffset++;
+											.)
+			  "," Ident<out var.name>					
+		  }
+	  "}"
+	  WEAK ";"
+  .
+
   Type<out int type>                         
   =   BasicType<out type>
        [ "[]"                                (. type++; .)
@@ -350,14 +382,15 @@ ForStatement<StackFrame frame>        	(. Label loopExit = new Label(!known);
                                            int expType; .)
   =  "for" Designator<out des>          (. if (des.entry.kind != Kinds.Var)
                                                 SemError("illegal control variable"); 
-										   if (!des.entry.canChange)
-                                                  SemError("may not alter this variable"); 
-											canChange = des.entry.canChange; // save
+										                       if (!des.entry.canChange)
+                                                SemError("may not alter this variable"); 
+										                      	canChange = des.entry.canChange; // save
                                             des.entry.canChange = false;   	// lock sym table entry
 										.)
      "=" Expression<out expType>        (. if (!Assignable(des.type, expType))
                                                 SemError("incompatible with control var"); .)
-     ( "to" | "downto"                  (. up = false; .)
+     ( "to" 
+     | "downto"                         (. up = false; .)
      )
      Expression< out expType>          	(. if (!Assignable(des.type, expType))
                                                 SemError("incompatible with control var"); 
